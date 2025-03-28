@@ -1,7 +1,3 @@
-import Carousel from 'react-bootstrap/Carousel';
-import ban1 from "../images/ban1.jpg";
-import ban2 from "../images/ban2.png";
-import ban3 from "../images/ban3.avif";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
@@ -10,12 +6,12 @@ import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-const Home=()=>{
+const KidsProduct=()=>{
  const [mydata, setMydata]= useState([]);
  const dispatch= useDispatch();
  const navigate = useNavigate();
 const loadData=async()=>{
-  let api="http://localhost:3000/product";
+  let api="http://localhost:3000/product/?category=Kids";  
   const response= await axios.get(api);
   console.log(response.data);
   setMydata(response.data);
@@ -57,33 +53,8 @@ const ans=mydata.map((key)=>{
 
     return(
         <>
-        <Carousel>
-      <Carousel.Item>
-          <img src={ban1}  width="100%" height="300" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img src={ban2}  width="100%" height="300" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img src={ban3}  width="100%" height="300" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-        
-       <h1> Our Premium Products</h1>
+               
+       <h1> Our Premium  Kids Products</h1>
       
       <div id="prodata">
       {ans}
@@ -95,4 +66,4 @@ const ans=mydata.map((key)=>{
     )
 }
 
-export default Home;
+export default KidsProduct;

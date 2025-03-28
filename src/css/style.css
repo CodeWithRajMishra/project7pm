@@ -12,6 +12,19 @@
     z-index: 3;
 }
 
+#prodata
+{
+ 
+    margin: auto;
+    display: flex;
+}
+
+#prodetail
+{
+    width: 70%;
+    flex-wrap: wrap;
+    padding-left: 50px;
+}
 #footer
 {
     width: 100%;
