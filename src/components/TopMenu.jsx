@@ -16,6 +16,7 @@ const TopMenu=()=>{
             <Nav.Link as={Link} to="womens">Womens</Nav.Link>
             <Nav.Link as={Link} to="kids">Kids</Nav.Link>
             <Nav.Link as={Link} to="cartdata">Cart</Nav.Link>
+            <Nav.Link as={Link} to="search">Search</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

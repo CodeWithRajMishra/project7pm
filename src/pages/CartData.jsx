@@ -5,9 +5,19 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { qntyIncrese, qntyDecrease, dataRemove } from "../cartSlice";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
 const CartData=()=>{
     const proData= useSelector(state=>state.mycart.cart);
     const dispatch=useDispatch();
+    const navigate = useNavigate();
+
+
+     
+
+
+
     let sno=0;
 
     let netAmount=0;
@@ -68,6 +78,12 @@ const CartData=()=>{
        {ans}
         </tbody>
         </Table>
+        <div style={{display:"Flex", justifyContent:"right", paddingRight:"50px"}}>
+        <Button onClick={()=>{navigate("/checkout")}}>Checkout</Button>
+       
+        </div>
+        <br /> <br />
+       
         </>
     )
 }
